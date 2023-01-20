@@ -1,116 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Lienken Technology Corporation</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+<title>Lienken Technology Corporation 靈感科技股份有限公司</title>
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 2px;
-  text-align: center;
-  font-size: 28px;
-  color: white;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  /*height: 300px;*/ /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
 </head>
 <body>
 
-<h2>Lienken Technology Corporation 靈感科技股份有限公司</h2>
-<header>
-  <h3>Products</h3> 
-</header>
-
-<section>
-  <nav>
-    <ul>
-      <li><a href="#material">Shock-absorbing material</a></li>
-      <li><a href="#material2">Noise-reducing material</a></li>
-
-    </ul>
-  </nav>
+    <script>
+        /* Storing user's device details in a variable*/
+        let details = navigator.userAgent;
   
-  <article>
-<h3 id="material" >Shock-absorbing materials</h3>
-     <p> <a href="https://www.youtube.com/watch?v=M88DidFeX38&t=3s">Shock absorbing materials video-2</a>
-     <p><iframe width="280" height="158" src="https://www.youtube.com/embed/M88DidFeX38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-    <p><a href="https://www.youtube.com/watch?v=1Bv1-nn_cd8"><b>Shock absorbing materials video-3. In 2.0m drop test, there is no external damage to the phone.</b> </a>
-    <p> <iframe width="280" height="158" src="https://www.youtube.com/embed/1Bv1-nn_cd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
- 
-    <p>LIENKEN smart nano materials provide very thin and light soft shock absorbers.</p>
-<p>These materials can apply to smartphone case, sport pads, medical, defense, transportation safety, transportation, computers, automotives, insoles, helmet, 
-    bicycle seat, acoustic and car electronics, etc.</p>
-<p>For inquiries and questions, please email: <a href="mailto:lienken168@gmail.com">lienken168@gmail.com</a>
+        /* Creating a regular expression 
+        containing some mobile devices keywords 
+        to search it in details string*/
+        let regexp = /android|iphone|kindle|ipad/i;
   
-  <h3 id="material2">Noise-reducing materials</h3>
-    
-    <h3 id="info"> Company Info.</h3>
-  <p>Lienken Tech is a company that combines technology and innovation. Our products include shock-absorbing materials and noise-reducing materials.
-  </article>
-</section>
-
-<footer>
-  <p>Mr. Calvin Lin E-mail: <a href="mailto:lienken168@gmail.com">lienken168@gmail.com</a> TEL:+886-2-89706339 FAX:+886-2-89706162 Mobile:+886-982111037
-    <p>Address: 7F., No.521, Xuecheng Rd., Shulin Dist., New Taipei City 23854, Taiwan (R.O.C.)
-    <p>Copyright © 2009 Lienken Technology Corporation
-</footer>
-
+        /* Using test() method to search regexp in details
+        it returns boolean value*/
+        let isMobileDevice = regexp.test(details);
+  
+        if (isMobileDevice) {
+            location.href = "http://lungyingwang.github.io/mobile.html";
+        } else {
+		location.href = "http://lungyingwang.github.io/desktop.html";
+            /*document.write("You are using Desktop");*/
+        }
+    </script>
 </body>
 </html>
 
